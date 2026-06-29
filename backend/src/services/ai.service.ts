@@ -1,13 +1,27 @@
 export async function analyzeResume(
   resumeText: string,
-  jobDescription: string
+  jobDescription: string,
 ) {
+  // Prevent huge payloads
+  const trimmedResume = resumeText.slice(0, 2500);
+  const trimmedJD = jobDescription.slice(0, 2500);
+
   const prompt = `
 You are an ATS resume evaluator.
 
-Compare resume with job description.
+Compare the resume with job description.
 
-Return JSON only:
+Scoring Rules:
+- 90-100 => Excellent match
+- 70-89 => Good match
+- 40-69 => Partial match
+- 0-39 => Poor match
+
+Return ONLY raw JSON.
+Do not wrap in markdown.
+Do not add explanation.
+
+Format:
 {
   "score": number,
   "missingKeywords": string[],
@@ -16,10 +30,10 @@ Return JSON only:
 }
 
 Resume:
-${resumeText}
+${trimmedResume}
 
 Job Description:
-${jobDescription}
+${trimmedJD}
 `;
 
   const response = await fetch(
@@ -40,12 +54,42 @@ ${jobDescription}
           },
         ],
       }),
-    }
+    },
   );
 
   const data = await response.json();
 
-  console.log(data);
+  console.log("FULL GEMINI RESPONSE:");
+  console.log(JSON.stringify(data, null, 2));
 
-  return data.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!response.ok) {
+    throw new Error(data?.error?.message || "Gemini API failed");
+  }
+
+  if (!data.candidates || data.candidates.length === 0) {
+    throw new Error("No candidates returned from Gemini");
+  }
+
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+  if (!text) {
+    throw new Error("Gemini returned empty text");
+  }
+
+  return text;
 }
+
+// Server is running on port 1120
+// {
+//   candidates: [ { content: [Object], finishReason: 'STOP', index: 0 } ],
+//   usageMetadata: {
+//     promptTokenCount: 86,
+//     candidatesTokenCount: 129,
+//     totalTokenCount: 787,
+//     promptTokensDetails: [ [Object] ],
+//     thoughtsTokenCount: 572,
+//     serviceTier: 'standard'
+//   },
+//   modelVersion: 'gemini-3.5-flash',
+//   responseId: 'xbM-aoKcIZjijuMP26XYuAc'
+// }
