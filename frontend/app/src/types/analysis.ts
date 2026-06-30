@@ -1,4 +1,4 @@
-type AnalysisResult = {
+export type AnalysisResult = {
   score: number;
   missingKeywords: string[];
   strengths: string[];
