@@ -28,6 +28,10 @@ export async function analyze(req: Request, res: Response) {
   }
 }
 
+
+
+
+
 export async function analyzePDF(req: Request, res: Response) {
   try {
     const file = req.file;
@@ -71,7 +75,7 @@ export async function analyzePDF(req: Request, res: Response) {
   } catch (error) {
 
     console.error(error);
-    
+
 
     res.status(500).json({
       success: false,

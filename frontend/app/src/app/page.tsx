@@ -21,10 +21,7 @@ export default function Home() {
 
       setLoading(true);
 
-      const data = await analyzeResume(
-        resumeFile,
-        jobDescription
-      );
+      const data = await analyzeResume(resumeFile, jobDescription);
 
       setResult(data.data);
     } catch (error) {
@@ -35,11 +32,13 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100 p-8">
+    <main className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-8">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">
-          AI Resume Analyzer
-        </h1>
+        {/* <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mx-50">
+          <span className="bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent">
+            AI Resume Analyzer
+          </span>
+        </h1> */}
 
         <ResumeForm
           resumeFile={resumeFile}
