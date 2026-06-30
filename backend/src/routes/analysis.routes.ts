@@ -1,6 +1,6 @@
 import express from "express";
 import { analyze, analyzePDF } from "../controllers/analysis.controller";
-import upload from "../../middleware/upload";
+import upload from "../middleware/upload";
 
 const router = express.Router();
 

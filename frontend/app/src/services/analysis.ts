@@ -9,14 +9,20 @@ export async function analyzeResume(
     formData.append("jobDescription", jobDescription);
 
     const response = await fetch(
-      "http://localhost:1120/api/analyze-pdf",
+      `${process.env.NEXT_PUBLIC_API_URL}/api/analyze-pdf`,
       {
         method: "POST",
         body: formData,
       }
     );
 
-    return response.json();
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Analysis failed");
+    }
+
+    return data;
   } catch (error) {
     console.log(error);
     throw error;

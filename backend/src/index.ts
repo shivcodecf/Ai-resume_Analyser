@@ -14,11 +14,11 @@ app.use(express.json());
 
 
 app.use(cors({
- origin:"http://localhost:3000"   
+ origin:process.env.FRONTEND_URL   
 }));
 
 
-const PORT = 1120;
+const PORT = process.env.PORT || 1120;
 
 app.use("/api", analysisRoutes);
 
