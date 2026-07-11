@@ -103,7 +103,7 @@ Job Description + Resume Text
 > Add screenshot here
 
 ```
-/screenshots/home1.png
+![Home Page](./screenshots/home.png)
 
 ```
 
