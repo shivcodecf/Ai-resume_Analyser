@@ -100,20 +100,15 @@ Job Description + Resume Text
 
 ### Home Page
 
-> Add screenshot here
-
-```
 ![Home Page](./screenshots/home1.png)
 
-```
+<!-- ### Upload Resume
+
+![Upload Resume](./screenshots/upload.png)
 
 ### Analysis Result
 
-> Add screenshot here
-
-```
-/screenshots/result.png
-```
+![Analysis Result](./screenshots/result.png) -->
 
 ---
 
