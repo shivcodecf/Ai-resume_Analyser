@@ -6,10 +6,6 @@ const router = express.Router();
 
 router.post("/analyze", analyze);
 
-router.post(
-  "/analyze-pdf",
-  upload.single("resume"),
-  analyzePDF
-);
+router.post("/analyze-pdf", upload.single("resume"), analyzePDF);
 
 export default router;

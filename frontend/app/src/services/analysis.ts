@@ -8,6 +8,8 @@ export async function analyzeResume(
     formData.append("resume", resumeFile);
     formData.append("jobDescription", jobDescription);
 
+    console.log(process.env.NEXT_PUBLIC_API_URL);
+
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/analyze-pdf`,
       {

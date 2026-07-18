@@ -102,13 +102,25 @@ Job Description + Resume Text
 
 ![Home Page](./screenshots/home1.png)
 
-<!-- ### Upload Resume
+### Upload Resume
 
-![Upload Resume](./screenshots/upload.png)
+![Upload Resume](./screenshots/upload_resume.png)
 
-### Analysis Result
+### Result suggestions
 
-![Analysis Result](./screenshots/result.png) -->
+![Analysis Result](./screenshots/suggestions.png)
+
+### Result analysis
+
+![Resume analysis](./screenshots/analysis.png)
+
+### Result strengths
+
+![Resume strengths](./screenshots/strengths.png)
+
+### Result keywords
+
+![Resume keywords](./screenshots/keywords.png)
 
 ---
 
