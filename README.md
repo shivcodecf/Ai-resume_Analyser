@@ -4,7 +4,7 @@ An AI-powered Resume Analyzer that compares a candidate's resume with a job desc
 
 ## 🌐 Live Demo
 
-- **Live Link:** https://ai-resume-analyser-89wz-cxocym8dk-shivcodecfs-projects.vercel.app/
+- **Live Link:** https://ai-resume-analyser-89wz.vercel.app/
 
 
 ---
