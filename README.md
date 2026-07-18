@@ -106,21 +106,28 @@ Job Description + Resume Text
 
 ![Upload Resume](./screenshots/upload_resume.png)
 
-### Result suggestions
-
-![Analysis Result](./screenshots/suggestions.png)
-
-### Result analysis
+### Result ATS Score
 
 ![Resume analysis](./screenshots/analysis.png)
 
-### Result strengths
+### Suggest keywords which missing in Resume
+
+![Resume keywords](./screenshots/keywords.png)
+
+### Your resume strengths
 
 ![Resume strengths](./screenshots/strengths.png)
 
-### Result keywords
+###  suggestions and chnages according to that job description
 
-![Resume keywords](./screenshots/keywords.png)
+![Analysis Result](./screenshots/suggestions.png)
+
+
+
+
+
+
+
 
 ---
 
